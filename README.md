@@ -64,18 +64,21 @@ Create the following API routes:
 * `metadata/route.ts`
 * `whitelist-amount/route.ts`
 
-These routes are necessary because the SDK uses server actions that require your Crystara API key, which should be stored securely on the server side.
+These routes are necessary, you will find the exact routes to copy seamlessly from the NextJS Example. This implementation makes use of server actions which require your Crystara API key from .env in a server-side protected way.
 
 #### Environment Variables
 
 Configure the following environment variables:
 ```
-NEXT_PUBLIC_CRYSTARA_API_URL=https://api.crystara.trade
-NEXT_PUBLIC_SUPRA_RPC_URL=https://rpc.supraoracles.com/mainnet
-NEXT_PUBLIC_CRYSTARA_ADR=0x123...
+CRYSTARA_PRIVATE_API_KEY=<< SEND A REGISTRATION EMAIL TO developers@crystara.trade with 1. Purpose and 2. Registration Email >>
+
+NEXT_PUBLIC_CRYSTARA_API_URL=https://api.crystara.trade/mainnet
+NEXT_PUBLIC_SUPRA_RPC_URL="https://rpc-mainnet.supra.com/rpc/v1"
+
+NEXT_PUBLIC_CRYSTARA_ADR=0xfd566b048d7ea241ebd4d28a3d60a9eaaaa29a718dfff52f2ff4ca8581363b85
 NEXT_PUBLIC_COLLECTIONS_MODULE_NAME=crystara_blindbox_v1
+
 NEXT_PUBLIC_SUPRA_CHAIN_ID=8
-CRYSTARA_PRIVATE_API_KEY=your_api_key_here
 ```
 
 
@@ -269,7 +272,7 @@ export function BlindBoxClient() {
 
 ### Step 5. Sound Effects
 
-The SDK includes sound effects for the blind box experience. In the NextJS example, these are located under `public/sounds`. You can use the provided sounds or replace them with your own.
+The SDK does not include sound effects for the blind box experience. You can refer to the NextJS example, Crystara's SFX are located under `public/sounds`. You can use the provided sounds or replace them with your own.
 
 ## Additional Resources
 
